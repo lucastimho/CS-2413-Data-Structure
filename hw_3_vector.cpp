@@ -132,6 +132,11 @@ void MyVector::resize(int n)
 	p = newP;
 	size = n;
 }
+void MyVector::push_back(int x)
+{
+	MyVector::resize(size + 1);
+	p[size - 1] = x;
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
