@@ -89,7 +89,17 @@ int MyVector::vsize()
 {
 	return size;
 }
-
+int MyVector::empty()
+{
+	if (size == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
