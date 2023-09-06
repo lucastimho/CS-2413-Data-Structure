@@ -123,9 +123,19 @@ void MyVector::resize(int n)
 {
 	int *newP = new int[n];
 
-	for (int i = 0; i < size; i++)
+	if (n > size)
 	{
-		newP[i] = p[i];
+		for (int i = 0; i < size; i++)
+		{
+			newP[i] = p[i];
+		}
+	}
+	else
+	{
+		for (int i = 0; i < n; i++)
+		{
+			newP[i] = p[i];
+		}
 	}
 
 	delete p;
@@ -141,16 +151,7 @@ void MyVector::pop_back()
 {
 	if (size != 0)
 	{
-		int *newP = new int[size - 1];
-
-		for (int i = 0; i < size - 1; i++)
-		{
-			newP[i] = p[i];
-		}
-
-		delete p;
-		p = newP;
-		size -= 1;
+		MyVector::resize(size - 1);
 	}
 }
 // The main function has been completed for you.
