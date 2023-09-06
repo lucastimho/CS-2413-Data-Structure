@@ -111,6 +111,19 @@ int MyVector::at(int idx)
 		return -1;
 	}
 }
+void MyVector::resize(int n)
+{
+	int *newP = new int[n];
+
+	for (int i = 0; i < size; i++)
+	{
+		newP[i] = p[i];
+	}
+
+	delete p;
+	p = newP;
+	size = n;
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
