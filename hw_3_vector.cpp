@@ -100,6 +100,17 @@ int MyVector::empty()
 		return 0;
 	}
 }
+int MyVector::at(int idx)
+{
+	if (idx < size)
+	{
+		return p[idx];
+	}
+	else
+	{
+		return -1;
+	}
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
