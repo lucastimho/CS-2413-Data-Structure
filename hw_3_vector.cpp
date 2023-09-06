@@ -198,6 +198,11 @@ void MyVector::erase(int idx)
 	p = newP;
 	size -= 1;
 }
+MyVector::MyVector()
+{
+	*p = NULL;
+	size = 0;
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
