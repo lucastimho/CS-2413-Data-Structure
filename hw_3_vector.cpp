@@ -137,6 +137,22 @@ void MyVector::push_back(int x)
 	MyVector::resize(size + 1);
 	p[size - 1] = x;
 }
+void MyVector::pop_back()
+{
+	if (size != 0)
+	{
+		int *newP = new int[size - 1];
+
+		for (int i = 0; i < size - 1; i++)
+		{
+			newP[i] = p[i];
+		}
+
+		delete p;
+		p = newP;
+		size -= 1;
+	}
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
