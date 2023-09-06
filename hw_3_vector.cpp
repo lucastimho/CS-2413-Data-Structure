@@ -91,7 +91,15 @@ int MyVector::vsize()
 }
 int MyVector::empty()
 {
-	if (size == 0)
+	int count;
+	for (int i = 0; i < size; i++)
+	{
+		if (p[i] != NULL)
+		{
+			count++;
+		}
+	}
+	if (count == 0)
 	{
 		return 1;
 	}
