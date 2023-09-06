@@ -178,6 +178,26 @@ void MyVector::insert(int idx, int x)
 	p = newP;
 	size += 1;
 }
+void MyVector::erase(int idx)
+{
+	int *newP = new int[size - 1];
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		if (i < idx)
+		{
+			newP[i] = p[i];
+		}
+		else
+		{
+			newP[i] = p[i + 1];
+		}
+	}
+
+	delete p;
+	p = newP;
+	size -= 1;
+}
 // The main function has been completed for you.
 // It is used to test your implmentation.
 // You should not modify it (unless there is typo).
