@@ -94,7 +94,7 @@ int MyVector::empty()
 	int count;
 	for (int i = 0; i < size; i++)
 	{
-		if (p[i] != NULL)
+		if (p[i] != 0)
 		{
 			count++;
 		}
@@ -164,7 +164,7 @@ void MyVector::insert(int idx, int x)
 		{
 			newP[i] = p[i];
 		}
-		else if (i = idx)
+		else if (i == idx)
 		{
 			newP[i] = x;
 		}
@@ -200,7 +200,7 @@ void MyVector::erase(int idx)
 }
 MyVector::MyVector()
 {
-	*p = NULL;
+	p = nullptr;
 	size = 0;
 }
 // The main function has been completed for you.
